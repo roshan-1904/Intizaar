@@ -15,7 +15,7 @@ const ContactSubmissionSchema = new mongoose.Schema({
   },
   serviceType: {
     type: String,
-    enum: ['Booking', 'Consultation', 'General Inquiry'], // Added dropdown options
+    enum: ['Booking', 'Consultation', 'General Inquiry'], 
     default: 'General Inquiry'
   },
   submittedAt: {

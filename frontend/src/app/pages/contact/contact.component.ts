@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms'; // Import NgForm for form validation
-import { HttpClient } from '@angular/common/http'; // Import HttpClient
+import { NgForm } from '@angular/forms'; 
+import { HttpClient } from '@angular/common/http'; 
 
 @Component({
   selector: 'app-contact',
@@ -8,31 +8,35 @@ import { HttpClient } from '@angular/common/http'; // Import HttpClient
   styleUrls: []
 })
 export class ContactComponent {
+  isLoading: boolean = false;
 
   contact = {
     name: '',
     email: '',
     message: '',
-    serviceType: 'General Inquiry' // Added serviceType with default
+    serviceType: 'General Inquiry' 
   };
 
-  // Inject HttpClient in the constructor
+  
   constructor(private http: HttpClient) { }
 
   async submitForm(form: NgForm) {
     if (form.valid) {
+      this.isLoading = true; 
       try {
-        // Replace with your backend API URL
-        const backendUrl = 'https://intizaar.onrender.com/api/contact'; // Assuming backend runs on port 5000
+        
+        const backendUrl = 'https://intizaar.onrender.com/api/contact'; 
 
         const response = await this.http.post(backendUrl, this.contact).toPromise();
         console.log('Backend response:', response);
         alert('Message sent successfully!');
-        // Reset form
+        
         form.resetForm({ serviceType: 'General Inquiry' });
       } catch (error) {
         console.error('Error submitting contact form:', error);
         alert('Failed to send message. Please try again later.');
+      } finally {
+        this.isLoading = false; 
       }
     } else {
       alert('Please fill in all required fields.');

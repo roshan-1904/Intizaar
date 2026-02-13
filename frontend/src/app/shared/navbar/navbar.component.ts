@@ -1,26 +1,10 @@
-// import { Component, OnInit } from '@angular/core';
-
-// @Component({
-//   selector: 'app-navbar',
-//   templateUrl: './navbar.component.html',
-//   styleUrls: ['./navbar.component.scss']
-// })
-// export class NavbarComponent implements OnInit {
-
-//   constructor() { }
-
-//   ngOnInit(): void {
-//   }
-
-// }
-
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: [] // Removed the reference to navbar.component.scss
+  styleUrls: [] 
 })
 export class NavbarComponent {
   mobileOpen = false;
