@@ -1,0 +1,58 @@
+<!-- Blog Hero Section -->
+<section class="relative bg-gradient-to-r from-sky-100 to-blue-100 py-20 md:py-32 text-center overflow-hidden">
+  <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('assets/hero-bg.jpg');"></div>
+  <div class="relative z-10 max-w-4xl mx-auto px-4">
+    <h1 class="text-5xl md:text-6xl font-extrabold text-blue-800 leading-tight">
+      Our Health Blog
+    </h1>
+    <p class="mt-4 text-xl md:text-2xl text-gray-800 font-light">
+      Insights and Articles on Women's Health & Fertility
+    </p>
+  </div>
+</section>
+
+<div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row gap-4 items-center">
+  <input [(ngModel)]="search"
+    placeholder="Search articles..."
+    class="border border-gray-300 p-3 rounded-lg w-full md:w-2/3 focus:outline-none focus:ring-2 focus:ring-sky-500">
+
+  <select [(ngModel)]="category" class="border border-gray-300 p-3 rounded-lg w-full md:w-1/3 focus:outline-none focus:ring-2 focus:ring-sky-500 bg-white">
+    <option value="">All Categories</option>
+    <option>IVF</option>
+    <option>PCOD</option>
+    <option>Gynecology</option>
+    <option>Fertility</option>
+  </select>
+</div>
+
+<!-- Blog Posts Grid Section -->
+<section class="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-16">
+  <div *ngFor="let b of filteredBlogs"
+    class="card overflow-hidden rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-2 transition-all duration-300">
+    <img src="https://rootsclinics.in/wp-content/uploads/2025/02/Fertility-specialist.jpg" alt="Blog Post Image" class="w-full h-48 object-cover">
+    <div class="p-6">
+      <p class="text-sm text-sky-600 font-semibold mb-2">{{ b.category }}</p>
+      <h3 class="font-bold text-xl text-gray-800 mb-3">{{ b.title }}</h3>
+      <p class="text-gray-600 leading-relaxed text-sm">{{ b.content }}</p>
+      <a href="#" class="mt-4 inline-block text-sky-600 font-semibold hover:underline">Read More →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section (Reusing Home CTA for consistency) -->
+<section class="bg-gradient-to-r from-sky-600 to-blue-500 py-20 text-center text-white relative overflow-hidden">
+  <div class="absolute inset-0 opacity-20" style="background-image: url('assets/cta-pattern.png'); background-size: cover;"></div>
+  <div class="relative z-10 max-w-4xl mx-auto px-4">
+    <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">
+      Have a Question?
+    </h2>
+    <p class="mt-4 text-lg md:text-xl font-light opacity-90">
+      Reach out to our experts for personalized advice and information.
+    </p>
+    <button
+      routerLink="/contact"
+      class="mt-8 bg-white text-sky-600 text-lg px-8 py-4 rounded-full shadow-lg hover:bg-sky-700 hover:text-white transform hover:scale-105 transition-all duration-300 ease-in-out">
+      Contact Us
+    </button>
+  </div>
+</section>

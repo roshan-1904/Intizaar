@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.detail {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+.detail h1 { color: #ec4899; }
+.detail {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+@media (max-width: 426px) {
+  .detail {
+    padding: 0 10px;
+  }
+}

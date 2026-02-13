@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="bg-pink-50 py-16 text-center" *ngIf="service">
+  <div class="text-5xl">{{ service.icon }}</div>
+  <h1 class="text-4xl font-bold text-pink-600 mt-4">
+    {{ service.title }}
+  </h1>
+  <p class="text-gray-600 mt-4 max-w-xl mx-auto">
+    {{ service.desc }}
+  </p>
+
+  <button
+    routerLink="/appointment"
+    class="mt-6 bg-pink-500 text-white px-6 py-3 rounded">
+    Book Appointment
+  </button>
+</section>
+
+</body>
+</html>

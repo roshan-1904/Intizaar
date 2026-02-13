@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+input, select {
+  outline: none;
+}
+
+.form-box {
+  max-width: 450px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.1);
+}
+
+@media (max-width: 768px) {
+  .form-box {
+    max-width: 90%;
+  }
+}
+
+
+@media (max-width: 426px) {
+  .form-box {
+    padding: 20px;
+  }
+}
