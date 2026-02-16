@@ -34,6 +34,12 @@ export class ServiceDetailComponent implements OnInit {
       title: 'Fertility Preservation',
       desc: 'Preserve your fertility for future planning.',
       icon: '🧬'
+    },
+    {
+      id: 4,
+      title: 'Fertility Preservation',
+      desc: 'Preserve your fertility for future planning.',
+      icon: '🧬'
     }
   ];
 

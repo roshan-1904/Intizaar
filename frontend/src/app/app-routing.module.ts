@@ -18,13 +18,7 @@ const routes: Routes = [
  { path: 'blog', component: BlogComponent },
  { path: 'contact', component: ContactComponent },
  { path: 'appointment', component: AppointmentComponent },
-{ path: 'services/:id', component: ServiceDetailComponent },
-
-//  { path: 'admin', component: LoginComponent },
-//  { path: 'services', component: ServicesComponent },
-
-//  { path: 'admin/login', component: LoginComponent },
-//   { path: 'admin/dashboard', component: DashboardComponent, canActivate: [AuthGuard] }
+  { path: 'services/:id', component: ServiceDetailComponent },
   { path: 'admin', redirectTo: 'admin/login', pathMatch: 'full' },
   { path: 'admin/login', component: LoginComponent },
   { path: 'admin/dashboard', component: DashboardComponent, canActivate: [AuthGuard] },

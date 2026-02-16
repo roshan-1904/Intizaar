@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http'; // Import HttpClient
+import { HttpClient } from '@angular/common/http'; 
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: [] // Removed styleUrls reference
+  styleUrls: []
 })
 export class LoginComponent implements OnInit {
 
-  login = { username: '', password: '' }; // Changed email to username
+  login = { username: '', password: '' }; 
 
-  constructor(private router: Router, private http: HttpClient) { } // Inject HttpClient
+  constructor(private router: Router, private http: HttpClient) { } 
 
   ngOnInit(): void {
   }
@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
 
       if (response && response.token) {
         localStorage.setItem('token', response.token);
-        this.router.navigate(['/admin/dashboard']); // Navigate to admin dashboard
+        this.router.navigate(['/admin/dashboard']); 
       } else {
         alert('Login failed: No token received.');
       }
