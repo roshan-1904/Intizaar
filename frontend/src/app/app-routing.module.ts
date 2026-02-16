@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'admin/login', component: LoginComponent },
   { path: 'admin/dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
 
-  /* ===== FALLBACK ===== */
+
   { path: '**', redirectTo: '' }
 
 
