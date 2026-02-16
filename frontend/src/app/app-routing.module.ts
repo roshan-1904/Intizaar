@@ -18,16 +18,25 @@ const routes: Routes = [
  { path: 'blog', component: BlogComponent },
  { path: 'contact', component: ContactComponent },
  { path: 'appointment', component: AppointmentComponent },
- { path: 'admin', component: LoginComponent },
- { path: 'services', component: ServicesComponent },
 { path: 'services/:id', component: ServiceDetailComponent },
- { path: 'admin/login', component: LoginComponent },
-  { path: 'admin/dashboard', component: DashboardComponent, canActivate: [AuthGuard] }
+
+//  { path: 'admin', component: LoginComponent },
+//  { path: 'services', component: ServicesComponent },
+
+//  { path: 'admin/login', component: LoginComponent },
+//   { path: 'admin/dashboard', component: DashboardComponent, canActivate: [AuthGuard] }
+  { path: 'admin', redirectTo: 'admin/login', pathMatch: 'full' },
+  { path: 'admin/login', component: LoginComponent },
+  { path: 'admin/dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+
+  /* ===== FALLBACK ===== */
+  { path: '**', redirectTo: '' }
+
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
